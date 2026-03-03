@@ -34,9 +34,9 @@ urlpatterns = [
         name="car-list-create"
     ),
     path(
-        "cars/<int:pk>/delete/",
-         CarListDeleteView.as_view(),
-         name="car-list-delete"
+        "cars/<int:pk>delete",
+        CarListDeleteView.as_view(),
+        name="car-list-delete"
     ),
     path(
         "cars/<int:pk>/update/",
