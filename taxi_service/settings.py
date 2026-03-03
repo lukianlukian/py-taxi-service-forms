@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/4.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.0/ref/settings/
 """
-
+import sys
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / "subdir".
@@ -34,6 +34,7 @@ INTERNAL_IPS = [
 ]
 
 # Application definition
+
 
 INSTALLED_APPS = [
     "django.contrib.admin",
@@ -144,3 +145,8 @@ STATIC_ROOT = BASE_DIR / "staticfiles"
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 CRISPY_TEMPLATE_PACK = "bootstrap4"
+
+if "test" in sys.argv:
+    INSTALLED_APPS = [a for a in INSTALLED_APPS if a != "debug_toolbar"]
+    MIDDLEWARE = [m for m in MIDDLEWARE if m != "debug_toolbar.middleware.DebugToolbarMiddleware"]
+    DEBUG = False

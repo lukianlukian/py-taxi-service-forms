@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block content %}
-  <a href="{% url 'taxi:car-list-update' pk=car.pk %}" style="float: right; font-size: 100px">+</a>
+  <a href="{% url 'taxi:car-update' pk=car.pk %}" style="float: right; font-size: 100px">+</a>
   <p>Manufacturer: ({{ car.manufacturer.name }}, {{ car.manufacturer.country }})</p>
   <h1>Drivers</h1>
   <hr>
