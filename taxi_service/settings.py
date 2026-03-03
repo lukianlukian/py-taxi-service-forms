@@ -148,5 +148,8 @@ CRISPY_TEMPLATE_PACK = "bootstrap4"
 
 if "test" in sys.argv:
     INSTALLED_APPS = [a for a in INSTALLED_APPS if a != "debug_toolbar"]
-    MIDDLEWARE = [m for m in MIDDLEWARE if m != "debug_toolbar.middleware.DebugToolbarMiddleware"]
+    MIDDLEWARE = [
+        m for m in MIDDLEWARE
+        if m != "debug_toolbar.middleware.DebugToolbarMiddleware"
+    ]
     DEBUG = False
