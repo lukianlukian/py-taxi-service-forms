@@ -37,7 +37,7 @@ urlpatterns = [
         "cars/<int:pk>/delete/",
          CarListDeleteView.as_view(),
          name="car-list-delete"
-         ),
+    ),
     path(
         "cars/<int:pk>/update/",
         CarListUpdateView.as_view(),
