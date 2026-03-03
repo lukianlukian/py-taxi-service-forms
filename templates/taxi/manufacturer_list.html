@@ -23,6 +23,12 @@
               <td>
                   {{ manufacturer.country }}
               </td>
+              <td>
+                <a href="{% url 'taxi:manufacturers-list-update' pk=manufacturer.pk%}">update</a>
+              </td>
+              <td>
+                <a href="{% url 'taxi:manufacturers-list-delete' pk=manufacturer.pk%}">delete</a>
+              </td>
           </tr>
         {% endfor %}
       </table>
